@@ -1,0 +1,26 @@
+
+    <main role="main">
+        {% load staticfiles %}
+      <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">성주 포트폴리오에오</h1>
+          <p class="lead text-muted">이건 저의 작품이에오</p>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row">
+              {%for portfolio in portfolio.all %}
+            <div class="col-md-4">
+              <div class="card mb-4 shadow-sm">
+                <img class="card-img-top" src="{{portfolio.image.url}}" alt="1st 작품">
+                <div class="card-body">
+                    <h4>{{portfolio.title}}</h4>
+                  <p class="card-text">{{portfolio.description}}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+    </main>
